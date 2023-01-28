@@ -9,14 +9,13 @@ const Stack = createNativeStackNavigator();
 const App: React.FC = () => {
   return (
     <NativeBaseProvider>
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Notes" component={Home} />
-      </Stack.Navigator>
-    </NavigationContainer>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Notes" component={Home} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </NativeBaseProvider>
   );
 };
 
 export { App };
-
