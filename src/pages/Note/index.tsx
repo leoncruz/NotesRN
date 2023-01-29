@@ -1,12 +1,16 @@
 import React, { useCallback, useState } from 'react';
 
-import { useRoute, RouteProp } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import { Box, TextArea } from 'native-base';
 
-import { Note as NoteModel } from '../../models/Note';
+import { StackNavigatorProps } from '../../routes';
+
+import type { RouteProp } from '@react-navigation/native';
+
+type NoteScreenProps = RouteProp<StackNavigatorProps, 'Note'>;
 
 const Note: React.FC = () => {
-  const route = useRoute<RouteProp<{ params: { note: NoteModel } }>>();
+  const route = useRoute<NoteScreenProps>();
   const note = route.params.note;
 
   const [noteBody, setNoteBody] = useState<string>(note.body);
