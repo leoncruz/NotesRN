@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
-import { Box, TextArea } from 'native-base';
+
 import { useRoute, RouteProp } from '@react-navigation/native';
+import { Box, TextArea } from 'native-base';
 
 import { Note as NoteModel } from '../../models/Note';
 

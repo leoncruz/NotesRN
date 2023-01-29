@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { FlatList } from 'native-base';
+
 import { Note as NoteModel } from '../../../../models/Note';
 import { Note } from '../Note';
 

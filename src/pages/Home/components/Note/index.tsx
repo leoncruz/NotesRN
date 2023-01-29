@@ -1,8 +1,9 @@
 import React from 'react';
+
+import { useNavigation } from '@react-navigation/native';
 import { Box, Column, Pressable, Text } from 'native-base';
 
 import { Note as NoteModel } from '../../../../models/Note';
-import { useNavigation } from '@react-navigation/native';
 
 type NoteProps = {
   note: NoteModel;
