@@ -1,6 +1,7 @@
 import React from 'react';
-import { Note } from '../../models/Note';
+
 import { NotesList } from './components/NotesList';
+import { Note } from '../../models/Note';
 
 const data = [...Array(10).keys()].map(
   index =>
