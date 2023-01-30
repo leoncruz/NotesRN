@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FlatList } from 'native-base';
 
@@ -9,12 +9,20 @@ type NotesListProps = {
   notes: Array<NoteModel>;
 };
 
-const NotesList: React.FC<NotesListProps> = ({ notes }) => {
+const NotesList: React.FC<NotesListProps> = ({ notes: listNotes }) => {
+  const [notes, setNotes] = useState(listNotes);
+
+  const removeNote = (note: NoteModel) => {
+    const newList = notes.filter(item => item.id !== note.id);
+
+    setNotes(newList);
+  };
+
   return (
     <FlatList
       data={notes}
       renderItem={({ item }) => {
-        return <Note note={item} />;
+        return <Note note={item} removeNote={removeNote} />;
       }}
       keyExtractor={(item, index) => `${item.id}-${index}`}
     />
