@@ -1,0 +1,13 @@
+#!/bin/bash
+
+root_path=$PWD
+android_path=$root_path/android
+apk_path=$android_app_path/build/outputs/apk/release/
+app_name="NotesRN"
+
+
+cd $android_path
+
+./gradlew assembleRelease
+
+mv $apk_path/app-release.apk $root_path/builds/notes-rn.apk
