@@ -4,6 +4,19 @@ workflows:
     max_build_duration: 120
     instance_type: mac_mini_m1
 
+    environment:
+        node: 18
+
+    triggering:
+      events:
+        - push
+        - tag
+        - pull_request
+      branch_patterns:
+        - pattern: 'main'
+          include: true
+          source: true
+
     scripts:
       - name: Set Android SDK location
         script: | 
@@ -16,4 +29,4 @@ workflows:
         script: npm run build-android
 
     artifacts:
-      - android/app/build/debug/**/*.apk
+      - android/app/build/outputs/**/*.apk 
