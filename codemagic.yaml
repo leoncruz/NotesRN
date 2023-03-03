@@ -26,7 +26,9 @@ workflows:
         script: npm install
 
       - name: Build
-        script: npm run build-android
+        script: |
+          chmod +x ./scripts/build-android
+          npm run build-android
 
     artifacts:
-      - android/app/build/outputs/**/*.apk 
+      -  android/app/build/outputs/apk/**/*.apk
